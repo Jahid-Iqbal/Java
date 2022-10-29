@@ -38,3 +38,5 @@ Loading contains below components.
 **Interpreter:** Executing the code line by line.
 
 **JIT Compiler:** Recognizing the methods that are executing repeatedly and stores the byte code. Just run the byte code again if required further. No need to execute line by line code every time. 
+
+**Java Native Interface (JNI):** Extracting the native methods that are used in application to the compiler.

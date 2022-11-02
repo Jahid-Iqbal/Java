@@ -1,6 +1,49 @@
 # String
 
->String is nothing but a sequence of characters.
+>String is nothing but a sequence of characters or Array of characters.
+
+String is a non-Primitive Data Type. Because it has no fix length. In Java, to represent the character sequence, it introduces an interface called charSequence.
+
+String is a class which inherits Object and implements charSequence.
+
+Original syntax of String class is as below.
+```java
+public final class String extends Object implement charSequence, Serializable, Comparable{
+
+}
+```
+As String is a class, so you can create object of String class. That object will be immutable.
+
+You can create object of String class in 2 ways. Such as,
+```java
+String s1= new String("Jahid");
+String s2= "Iqbal";
+```
+**Q. What is the difference between this 2 object?**  
+
+![picture](Pictures/string.png)  
+
+Two objects are created `s1` and `s2`. s1 object takes place in Heap memory but the literal of the object takes place in SCP memory. That literal is referenced by JVM internally. So, `s1` creates 2 object.
+
+`s2` object allocates memory inside SCP memory. `s2` creates 1 object.
+
+<font color="skyblue">The main difference between s1 and s2 object is based on the memory allocation. s1 allocates memory in Heap and SCP but s2 allocates memory only inside SCP.</font>
+
+**Q. What if multiple objects are created with same literal?**
+
+```java
+String s1= new String("Jahid"); //2 object
+String s2= "Iqbal";             //1 object
+String s3=  new String("Jahid"); //1 object
+String s4= "Jahid";             //0 object
+String s5= "Jahid";             //0 object
+String s6=  new String("Iqbal"); //1 object
+```
+s1 creates 2 object. 1 is inside Heap and another one is in SCP. s1 creates object literal inside SCP. s3 creates object in Heap memory but doesn't inside SCP. Because SCP already contains the same literal. SCP doesn't create duplicate literal. s4 doesn't create any object as the literal already exist in SCP. So just replace the JVM internal reference with s4. s5 also doesn't create any object as the literal already exist. So, just refers the existing literal which is referred by s4 already. s6 creates 1 object inside Heap and no object inside SCP as the literal is duplicate.
+
+**String Constant Pool (SCP):**  
+Another name of SCP is **String Literal Pool (SLP)**. This is a memory space inside the Heap memory. Inside the SCP area Garbage Collector doesn't work as JVM internally creates reference variable for each literal object. Creating duplicate literal is not allowed inside the SCP memory.  
+Till Java version 1.6 SCP was located inside Method memory area. From Java version 1.7 SCP is located inside the Heap memory. As, it can changes the own size as required in Heap memory but this luxury was not available in Method memory.
 
 ```java
 package string;

@@ -81,6 +81,34 @@ System.out.println(sb);   //JahidIqbal
 When an object os declared as final then that object cannot be reassigned. If you append or add content the original object will be updated with new content. Like as, system updated the original object literal to `JahidIqbal` after appending `Iqbal`.  
 But in Immutable case, original object doesn't change. Creating new object instead.
 
+**<font color="naviblue">Difference Between `==` operator and `equal()` method:</font>**  
+
+![picture](Pictures/equalOperator.png)
+
+`==` operator compares the reference of the objects. 
+In below code, objects of s1 and s2 are different in Heap memory though literals are same in SCP. So, `s1==s2` returns false. But `s3==s4` returns true because both variables pointing to same object literal.
+```java
+	public static void main(String[] args) {
+		
+		String s1= new String("Hello");
+		String s2= new String("Hello");
+		System.out.println(s1==s2);			//false
+		
+		String s3="World";
+		String s4="World";
+		System.out.println(s3==s4);			//true
+	}
+```
+`equal()` method compares the content of two String object.
+```java
+ 	String s1= new String("Hello");
+	String s2= new String("Hello");
+	System.out.println(s1==s2);			//false
+	System.out.println(s1.equals(s2));	//true
+```
+**What is the purpose of equal() method of Object class and String class?**  
+`equal()` method of Object class compares the reference and compares content in String class.
+
 ```java
 package string;
 

@@ -65,6 +65,22 @@ Let say, city1, city2, city3 are referred to a same string literal `Dhaka`. So i
 
 Real life Example: Just think of selecting country while creating profile in facebook. Let say 100k people selected the same country. One of them changed his country afterwards. As String is Immutable, system creates a new object of that person only and previous object would be unchanged. Otherwise country would be changed for all 100k people.
 
+**<font color="naviblue">Q. Why String class is declared as final?</font>**
+
+**final:**  If you don't want to give permission to any class to be extended then that class can be declared as final. So, final classes can not be inherited or extended. Any final method can not be overridden as well. The value of the final variable also can not be changed.
+
+String class is final because of protecting all the features of the String class. The security is also a concern of it.
+
+**Difference between final and Immutable:**  
+```java
+final StringBuffer sb = new StringBuffer("Jahid");
+sb=sb.append("Iqbal");  //error
+sb.append("Iqbal");
+System.out.println(sb);   //JahidIqbal
+```
+When an object os declared as final then that object cannot be reassigned. If you append or add content the original object will be updated with new content. Like as, system updated the original object literal to `JahidIqbal` after appending `Iqbal`.  
+But in Immutable case, original object doesn't change. Creating new object instead.
+
 ```java
 package string;
 

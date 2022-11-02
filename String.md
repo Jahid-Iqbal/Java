@@ -29,7 +29,7 @@ Two objects are created `s1` and `s2`. s1 object takes place in Heap memory but 
 
 <font color="skyblue">The main difference between s1 and s2 object is based on the memory allocation. s1 allocates memory in Heap and SCP but s2 allocates memory only inside SCP.</font>
 
-**Q. What if multiple objects are created with same literal?**
+**<font color="naviblue">Q. What if multiple objects are created with same literal?</font>**
 
 ```java
 String s1= new String("Jahid"); //2 object
@@ -44,6 +44,26 @@ s1 creates 2 object. 1 is inside Heap and another one is in SCP. s1 creates obje
 **String Constant Pool (SCP):**  
 Another name of SCP is **String Literal Pool (SLP)**. This is a memory space inside the Heap memory. Inside the SCP area Garbage Collector doesn't work as JVM internally creates reference variable for each literal object. Creating duplicate literal is not allowed inside the SCP memory.  
 Till Java version 1.6 SCP was located inside Method memory area. From Java version 1.7 SCP is located inside the Heap memory. As, it can changes the own size as required in Heap memory but this luxury was not available in Method memory.
+
+**<font color="naviblue">Q. What does Immutable means? Why String objects are Immutable?</font>**  
+
+![picture](Pictures/immutable.png)
+
+Immutable means the original literal of the object doesn't change. If any changes happens in the string literal then system creates a new object for that but doesn't bother the original object.
+
+```java
+String name= new String("Jahid");
+name.concate("Iqbal");
+System.out.println(name);    //Jahid
+name=name.concate("Iqbal");
+System.out.println(name);    //JahidIqbal
+```
+name object is referred to literal `Jahid`. Then that literal updated to `JahidIqbal`. But the original or first object didn't change anyway. Just created a new object for the new literal `JahidIqbal` and change the reference accordingly. That is called Immutable.
+
+String is Immutable,  
+Let say, city1, city2, city3 are referred to a same string literal `Dhaka`. So in some phase, the literal of city3 is changed. In the case of Mutable, the original object will be changed. So, the changes will be reflected for all the variable those are pointed to that object. As String is Immutable, so it creates a new object with the new literal and referred to assigned variable. So, none of the other variable will be impacted.
+
+Real life Example: Just think of selecting country while creating profile in facebook. Let say 100k people selected the same country. One of them changed his country afterwards. As String is Immutable, system creates a new object of that person only and previous object would be unchanged. Otherwise country would be changed for all 100k people.
 
 ```java
 package string;

@@ -1,4 +1,18 @@
-# String Builder
+# StringBuilder
+>StringBuilder class creates immutable objects and contains non-synchronized methods.
+
+StringBuilder classes syntax and inside methods are similar as StringBuffer.
+```java
+public final class StringBuilder
+    extends AbstractStringBuilder
+    implements Serializable, Comparable<StringBuffer>, CharSequence
+{
+	StringBuilder();
+	StringBuilder(int capacity);
+	StringBuilder(String str);
+	StringBuilder(charSequence seq);
+}	
+```
 
 **Declaration:**
 

@@ -1,5 +1,5 @@
 # StringBuffer
->Creating objects in Heap Memory and every time updating the content in original object. So, StringBuffer is mutable.
+>Creating objects in Heap Memory and every time updating the content in original object. So, StringBuffer is mutable. All the methods under StringBuffer class are synchronized.
 
 ```java
 public final class StringBuffer

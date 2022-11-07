@@ -302,6 +302,26 @@ Replace the oldChar by newChar and returns the new string. If oldChar doesn't fi
         System.out.println(firstName.replace("Bin", "Ibn"));	//Abdullah Ibn Omar
 	}
 ```
+**`replaceFirst(String regex, String replacement):String`:**  
+Replacing the first matched string. Accepting regular expression as parameter.
+```java
+public static void main(String[] args) {
+	String s1=new String("This is a boy");
+	System.out.println(s1.replaceFirst("is", "was"));	//Thwas is a boy. Replacing first matched string
+	System.out.println(s1.replaceFirst("is(.)", "was"));	//Thwasis a boy. Replacing first matched string and removes the spaces after that string
+}
+```
+**`replaceAll(String regex, String replacement):String`:**  
+Replacing all the matched string and accepting regular expression as parameter and that is the difference with `replace()` method.
+```java
+public static void main(String[] args) {
+	String s1=new String("This is a boy");
+	System.out.println(s1.replaceAll("is", "was"));	//Thwas was a boy
+	System.out.println(s1.replaceAll("is(.)", "was"));	//Thwaswasa boy. replaces the string and removes the spaces after that string.
+	System.out.println(s1.replaceAll("is(.*)", "was"));	//Thwas. replaces the string and removes everything afterwards.
+}
+```
+
 **`split(String regex): String[]`:**  
 Splits the string depending on the specified regular expression and returns an Array of string.
 ```java
@@ -318,3 +338,5 @@ Splits the string depending on the specified regular expression and returns an A
         //Omar
 	}
 ```
+**`String.compareTo(String str): int`:**  
+

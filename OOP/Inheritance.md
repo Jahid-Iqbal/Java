@@ -27,14 +27,14 @@ public class Cat extends Animal {
 }
 ```
 **Advantages:**  
-- Code reusability: Derived classes can use the base class codes.
-- Overriding: Derived classes can override the methods of base class.
-- Data Hiding: Derived classes cannot access or modify any methods or codes of base class.
+- **Code reusability:** Derived classes can use the base class codes.
+- **Overriding:** Derived classes can override the methods of base class.
+- **Data Hiding:** Derived classes cannot access or modify any methods or codes of base class.
 
-Disadvantages:
-- Lack of Independence: Each class is tightly bounded by each other.
-- Decrease the execution speed: 
-- Refactoring the code: If any code is modified in base class then that changes will be reflected in all other derived class.
+**Disadvantages:**
+- **Lack of Independence:** Each class is tightly bounded by each other.
+- **Decrease the execution speed:** 
+- **Refactoring the code:** If any code is modified in base class then that changes will be reflected in all other derived class.
 
 **Types of Inheritance:**  
 1. Single level Inheritance:  

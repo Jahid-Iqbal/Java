@@ -14,3 +14,4 @@ Two types of Polymorphism:
 2. Run time/ Dynamic Polymorphism: In case of overridden methods, which methods should be invoked that determines at run time. That's why it is called as Run time/ Dynamic polymorphism.
     - Method overriding
     - JVM managed
+

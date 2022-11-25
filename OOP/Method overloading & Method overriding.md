@@ -39,6 +39,24 @@ Scenario-3: Matches multiple methods/ Ambiguity
 `add(long a, int b);`  
 a=4 and b=5. First method, 4 is int and 5 can be promoted to long. Second method, 4 can be promoted to long and 5 is int. So compiler will be confused that which add method should be called. That is an ambiguity problem.
 
+Q. Can we overload the main method?
+Ans: Yes. But JVM compiles only the main that receives the String array as parameter.
+
+```java
+public class ChildPractice extends Practice {
+
+	public static void main(String args) {
+		System.out.println("String="+args);
+		
+	}
+	
+	public static void main(String[] args) {
+		ChildPractice p= new ChildPractice();
+		p.main("Hello");    //String=Hello
+	}
+
+}
+```
 # Method Overriding
 >Methods having same name and same signatures as like the parent class is called method overriding.
 

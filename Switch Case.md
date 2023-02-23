@@ -25,8 +25,7 @@ package com.basics;
 import java.util.*;
 public class SwitchCase {
 	public static void main(String[] args) {
-		Scanner scan=new Scanner(System.in);
-		int a= scan.nextInt();
+		int a=1;
 		switch(a) {
 		case 1: System.out.println(a);
 		break;
@@ -39,4 +38,4 @@ public class SwitchCase {
 	}
 }
 ```
-Here, for input `1` `case 1` would be executed and move outside of the `switch` block by executing the `break` statement. If input would be `5` then `default` would be executed as no case implied.
+Here, for input `1` `case 1` would be executed and move outside of the `switch` block by executing the `break` statement. If the value of a doesn't match any cases then execute the default case. If input would be `5` then `default` would be executed as no case implied.
